@@ -1,0 +1,170 @@
+.transaction {
+  min-block-size: 100vh;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.transaction__content {
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-inline: var(--page-padding);
+  display: grid;
+  gap: 2rem;
+}
+
+.transaction__section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.transaction__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.transaction__refresh {
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding-block: 0.45rem;
+  padding-inline: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.transaction__refresh:hover {
+  background: var(--color-accent-dark);
+}
+
+.transaction__refresh:active {
+  background: var(--color-accent-darker);
+  transform: translateY(1px);
+}
+
+.transaction__refresh:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.transaction__refresh:disabled {
+  cursor: not-allowed;
+  background: var(--color-border-strong);
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+
+.transaction__title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+}
+
+.transaction__card {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.transaction__details {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.transaction__details--log {
+  gap: 0.5rem;
+}
+
+.transaction__detail {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.transaction__label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.transaction__value {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: end;
+  overflow-wrap: anywhere;
+}
+
+.transaction__value--accent {
+  color: var(--color-accent);
+}
+
+.transaction__value--success {
+  color: var(--color-success);
+}
+
+.transaction__value-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.transaction__value-link:hover {
+  text-decoration: underline;
+}
+
+.transaction__value-link:active {
+  color: var(--color-accent-dark);
+}
+
+.transaction__value-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.transaction__data {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, SFMono, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  max-block-size: clamp(8rem, 25vh, 14rem);
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+
+.transaction__logs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.transaction__log-card {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 0.9rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .transaction__detail {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .transaction__value {
+    text-align: start;
+  }
+}
